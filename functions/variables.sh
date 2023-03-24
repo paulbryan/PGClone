@@ -153,9 +153,6 @@ pgclonevars() {
     variable /var/plexguide/vfs_test "4G"
     vfs_test=$(cat /var/plexguide/vfs_test)
 
-    variable /var/plexguide/vfs_bind ""
-    vfs_bind=$(cat /var/plexguide/vfs_bind)
-
     # For BWLimit
     variable /var/plexguide/timetable.bw "00:00,off 15:00,60M Sat-08:00,30M Sun-08:00,30M"
 
@@ -207,4 +204,7 @@ pgclonevars() {
 
     variable /var/plexguide/uagent "$randomagent"
     uagent=$(cat /var/plexguide/uagent)
+
+    variable /var/plexguide/vfs_bind ""
+    vfs_bind=$(cat /var/plexguide/vfs_bind)
 }

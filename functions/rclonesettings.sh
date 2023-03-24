@@ -565,7 +565,7 @@ EOF
         --fast-list \
         --drive-chunk-size="$vfs_dcs" \
         --user-agent="$uagent" \
-        --bind="$vfs_bind" \
+        --bind=$vfs_bind \
         copy ~/rclone.test gdrive:
 
     echo ""
@@ -582,7 +582,7 @@ EOF
         --fast-list \
         --drive-chunk-size="$vfs_dcs" \
         --user-agent="$uagent" \
-        --bind="$vfs_bind" \
+        --bind=$vfs_bind \
         copy gdrive:/rclone.test ~/
 
     echo ""

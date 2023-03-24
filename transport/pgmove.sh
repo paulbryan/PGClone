@@ -64,7 +64,7 @@ while true; do
             --max-transfer 750G \
             --bwlimit="$bwlimit" \
             --drive-chunk-size="$vfs_dcs" \
-            --bind="$vfs_bind" \
+            --bind=$vfs_bind \
             --user-agent="$useragent" \
             --exclude-from="/opt/appdata/plexguide/transport.exclude" \
             --exclude="**_HIDDEN~" --exclude=".unionfs/**" \
