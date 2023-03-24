@@ -55,7 +55,7 @@ while true; do
         rclone move "$hdpath/move/" "{{type}}:/" \
             --config=/opt/appdata/plexguide/rclone.conf \
             --log-file=/var/plexguide/logs/pgmove.log \
-            --log-level=INFO --stats=5s --stats-file-name-length=0 \
+            --log-level=INFO --stats=5s --stats-file-name-length=0 --bind="$vfs_bind" \
             --max-size=300G \
             --tpslimit=10 \
             --checkers=16 \
@@ -64,7 +64,6 @@ while true; do
             --max-transfer 750G \
             --bwlimit="$bwlimit" \
             --drive-chunk-size="$vfs_dcs" \
-            --bind="$vfs_bind" \
             --user-agent="$useragent" \
             --exclude-from="/opt/appdata/plexguide/transport.exclude" \
             --exclude="**_HIDDEN~" --exclude=".unionfs/**" \

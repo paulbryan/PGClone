@@ -56,7 +56,7 @@ startscript() {
             rclone moveto "$hdpath/move" "${p}{{encryptbit}}:/" \
                 --config=/opt/appdata/plexguide/rclone.conf \
                 --log-file=/var/plexguide/logs/pgblitz.log \
-                --log-level=INFO --stats=5s --stats-file-name-length=0 \
+                --log-level=INFO --stats=5s --stats-file-name-length=0 --bind="$vfs_bind" \
                 --max-size=300G \
                 --tpslimit=10 \
                 --checkers="$vfs_c" \
@@ -66,7 +66,6 @@ startscript() {
                 --max-transfer "$vfs_mt" \
                 --bwlimit="$bwlimit" \
                 --drive-chunk-size="$vfs_dcs" \
-                --bind="$vfs_bind" \
                 --user-agent="$useragent" \
                 --exclude-from="/opt/appdata/plexguide/transport.exclude" \
                 --exclude="**_HIDDEN~" --exclude=".unionfs/**" \
