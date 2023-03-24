@@ -26,6 +26,7 @@ while true; do
     useragent="$(cat /var/plexguide/uagent)"
     bwlimit="$(cat /var/plexguide/move.bw)"
     vfs_dcs="$(cat /var/plexguide/vfs_dcs)"
+    vfs_bind="$(cat /var/plexguide/vfs_bind)"
     let "cyclecount++"
 
     if [[ $cyclecount -gt 4294967295 ]]; then
@@ -63,6 +64,7 @@ while true; do
             --max-transfer 750G \
             --bwlimit="$bwlimit" \
             --drive-chunk-size="$vfs_dcs" \
+            --bind="$vfs_bind" \
             --user-agent="$useragent" \
             --exclude-from="/opt/appdata/plexguide/transport.exclude" \
             --exclude="**_HIDDEN~" --exclude=".unionfs/**" \

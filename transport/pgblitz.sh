@@ -27,6 +27,7 @@ startscript() {
         vfs_mt="$(cat /var/plexguide/vfs_mt)"
         vfs_t="$(cat /var/plexguide/vfs_t)"
         vfs_c="$(cat /var/plexguide/vfs_c)"
+        vfs_bind="$(cat /var/plexguide/vfs_bind)"
         
         let "cyclecount++"
 
@@ -65,6 +66,7 @@ startscript() {
                 --max-transfer "$vfs_mt" \
                 --bwlimit="$bwlimit" \
                 --drive-chunk-size="$vfs_dcs" \
+                --bind="$vfs_bind" \
                 --user-agent="$useragent" \
                 --exclude-from="/opt/appdata/plexguide/transport.exclude" \
                 --exclude="**_HIDDEN~" --exclude=".unionfs/**" \
